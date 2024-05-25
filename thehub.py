@@ -2,7 +2,27 @@ import replicate
 import streamlit as st
 import os
 from dotenv import load_dotenv
-# from openai import OpenAI
+import time
+
+# Define a debounce function
+def debounce(func, wait):
+    last_called = 0
+    
+    def debounced(*args, **kwargs):
+        nonlocal last_called
+        now = time.time()
+        elapsed = now - last_called
+        
+        if elapsed < wait:
+            # If called too soon, reset the timer
+            last_called = now
+        else:
+            # If called after the debounce period, execute the function
+            last_called = now
+            return func(*args, **kwargs)
+    
+    return debounced
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -12,8 +32,8 @@ load_dotenv()
 REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 
 with st.sidebar:
-    st.title("The Hub Bot")
-    st.write("This is a financial bot that helpyou with your daily financial information.Don't be financial literate and this ai can help you.Get to know about inflation")
+    st.title("The Hub Bot💵")
+    st.write("This is a financial bot💵 that helpyou with your daily financial information.Don't be financial literate and this ai can help you.Get to know about inflation💵")
     headers = {
     "Authorization": f"Token {REPLICATE_API_TOKEN}",
     "Content-Type": "application/json"
@@ -56,12 +76,13 @@ def generate_llama2_response(prompt_input):
             string_dialogue += "User: " + dict_message["content"] + "\n\n"
         else:
             string_dialogue += "Assistant: " + dict_message["content"] + "\n\n"
-   
+
     output = replicate.run(
         llm,  
         input={"prompt": f"{string_dialogue} {prompt_input}\nAssistant: ", "temperature": temperature, "top_p": top_p, "max_length": max_length, "repetition_penalty": 1.0}
     )
     return output
+
 
 # Chat input and response generation
 if prompt := st.chat_input(placeholder="hello friend"):
