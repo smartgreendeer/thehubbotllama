@@ -1,8 +1,8 @@
-import replicate
 import streamlit as st
 import os
-from dotenv import load_dotenv
 import time
+import replicate
+from dotenv import load_dotenv
 
 # Define a debounce function
 def debounce(func, wait):
