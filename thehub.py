@@ -33,7 +33,7 @@ REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 
 with st.sidebar:
     st.title("The Hub Bot💵")
-    st.write("This is a financial bot💵 that helpyou with your daily financial information.Don't be financial literate and this ai can help you.Get to know about inflation💵")
+    st.write("This is a financial bot💵 that help you with your daily financial information.Don't be financial illiterate and this ai can help you.Our language is money.Get to know about inflation💵")
     headers = {
     "Authorization": f"Token {REPLICATE_API_TOKEN}",
     "Content-Type": "application/json"
@@ -50,6 +50,8 @@ with st.sidebar:
     top_p = st.slider('Top P', min_value=0.01, max_value=1.0, value=0.9, step=0.01)
     max_length = st.slider('Max Length', min_value=32, max_value=128, value=120, step=8)
     st.markdown('🤑💰 Go back to [The Hub]()')
+    st.write("created by John and Sheila.")
+    st.write("Get to see [live stocks](https://fib.co.ke/live-markets/),get to understand how the current live market")
 
     
 
