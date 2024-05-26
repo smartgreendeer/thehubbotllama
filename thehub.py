@@ -2,7 +2,7 @@ import replicate
 import streamlit as st
 import os
 from dotenv import load_dotenv
-import time
+import webbrowser
 
 # Load environment variables from .env file
 load_dotenv()
@@ -29,18 +29,12 @@ with st.sidebar:
     temperature = st.slider('Temperature', min_value=0.01, max_value=5.0, value=0.1, step=0.01)
     top_p = st.slider('Top P', min_value=0.01, max_value=1.0, value=0.9, step=0.01)
     max_length = st.slider('Max Length', min_value=32, max_value=128, value=120, step=8)
-    st.markdown('🤑💰 Go back to [The Hub]()')
-    st.write("created by John and Sheila.")
-    st.write("Get to see [live stocks](https://fib.co.ke/live-markets/),get to understand how the current live market")
-
-    
-
-
-   
+       
 # first message to be initialized 
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Welcome to The Hub Bot! I'm here to help you with any questions about finance. What can I assist you with today?"}]
 
+st.subheader("chats")
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
@@ -80,3 +74,24 @@ if prompt := st.chat_input(placeholder="hello friend"):
         message = {"role": "assistant", "content": full_response}
         st.session_state.messages.append(message)
 
+with st.sidebar:
+    def open_website(url):
+        webbrowser.open(url, new=0, autoraise=True)
+
+    website_url = "https://example.com"
+
+    if st.button("Go to Website"):
+        open_website(website_url)
+
+    st.write("Get to see live stocks get to understand how the current live market")
+    website_url = "https://fib.co.ke/live-markets/"
+
+    if st.button("Live Stock"):
+        open_website(website_url)
+
+
+    # Add an Acknowledgment button to navigate back to the Blogging social app
+    if st.button("About us", key='ack_button'):
+        st.markdown("Created by John and Sheila be kind we are just junior developers feel free to interact with us")
+
+        
