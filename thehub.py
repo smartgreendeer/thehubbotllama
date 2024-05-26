@@ -80,12 +80,12 @@ with st.sidebar:
         webbrowser.open(url, new=0, autoraise=True)
 
     website_url = "https://example.com"
-    
+
     st.write("Click me to go back to back to The Hub")
     if st.button("The Hub"):
         open_website(website_url)
 
-    st.write("Get to see live stocks get to understand how the current live market")
+    st.write("Get to see live stocks get to understand the current  market")
     website_url1 = "https://fib.co.ke/live-markets/"
 
     if st.button("Live Stock"):
