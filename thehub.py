@@ -77,7 +77,7 @@ if prompt := st.chat_input(placeholder="hello friend"):
 
 with st.sidebar:
     st.write()
-    if st.button("Elevation Blogs"):
+    if st.button("The Hub"):
          st.markdown("Click me to go back to back to [The Hub](https://necros240.github.io/blogging/)")
           
 
