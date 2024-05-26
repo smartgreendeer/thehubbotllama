@@ -70,15 +70,15 @@ if prompt := st.chat_input(placeholder="hello friend"):
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = generate_llama2_response(prompt)
-            full_response = ''.join(response)
+            full_response = ' '.join(response)
             st.write(full_response)
         message = {"role": "assistant", "content": full_response}
         st.session_state.messages.append(message)
 
 with st.sidebar:
     st.write()
-    if st.button("The Hub"):
-         st.markdown("Click me to go back to back to [The Hub]()")
+    if st.button("Elevation Blogs"):
+         st.markdown("Click me to go back to back to [The Hub](https://necros240.github.io/blogging/)")
           
 
     if st.button("Live Stock"):
