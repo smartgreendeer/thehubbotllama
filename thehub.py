@@ -76,19 +76,13 @@ if prompt := st.chat_input(placeholder="hello friend"):
         st.session_state.messages.append(message)
 
 with st.sidebar:
-    def open_website(url):
-        webbrowser.open(url, new=1, autoraise=True)
-
-
-    st.write("Click me to go back to back to The Hub")
+    st.write()
     if st.button("The Hub"):
-        open_website("https://example.com")
-
-    st.write("Get to see live stocks get to understand the current  market")
-    
+         st.markdown("Click me to go back to back to [The Hub]()")
+          
 
     if st.button("Live Stock"):
-        open_website("https://fib.co.ke/live-markets/")
+        st.markdown("Get to see [live stocks]('https://fib.co.ke/live-markets/')get to understand the current  market") 
 
 
     # Add an Acknowledgment button to navigate back to the Blogging social app
