@@ -77,19 +77,20 @@ if prompt := st.chat_input(placeholder="hello friend"):
 
 with st.sidebar:
     def open_website(url):
-        webbrowser.open(url, new=0, autoraise=True)
+        webbrowser.open(url, new=1, autoraise=True)
 
-    website_url = "https://example.com"
 
     st.write("Click me to go back to back to The Hub")
     if st.button("The Hub"):
-        open_website(website_url)
+        website_url = "https://example.com"
+        webbrowser.open_website(website_url)
 
     st.write("Get to see live stocks get to understand the current  market")
-    website_url1 = "https://fib.co.ke/live-markets/"
+    
 
     if st.button("Live Stock"):
-        open_website(website_url1)
+        url = "https://fib.co.ke/live-markets/"
+        webbrowser.open_website(url)
 
 
     # Add an Acknowledgment button to navigate back to the Blogging social app
