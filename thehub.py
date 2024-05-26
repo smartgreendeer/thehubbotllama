@@ -83,14 +83,14 @@ with st.sidebar:
     st.write("Click me to go back to back to The Hub")
     if st.button("The Hub"):
         website_url = "https://example.com"
-        webbrowser.open_website(website_url)
+        webbrowser.open_new_tab(website_url)
 
     st.write("Get to see live stocks get to understand the current  market")
     
 
     if st.button("Live Stock"):
         url = "https://fib.co.ke/live-markets/"
-        webbrowser.open_website(url)
+        webbrowser.open_new_tab(url)
 
 
     # Add an Acknowledgment button to navigate back to the Blogging social app
