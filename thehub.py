@@ -92,7 +92,7 @@ with st.sidebar:
 
 
     # Add an Acknowledgment button to navigate back to the Blogging social app
-if st.button("About us", key='ack_button'):
-    st.markdown("Created by John and Sheila be kind we are just junior developers feel free to interact with us")
+    if st.button("About us", key='ack_button'):
+        st.markdown("Created by John and Sheila be kind we are just junior developers feel free to interact with us")
 
         
