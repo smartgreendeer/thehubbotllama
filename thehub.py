@@ -82,7 +82,7 @@ with st.sidebar:
           
 
     if st.button("Live Stock"):
-        st.markdown("Get to see [live stocks]('https://fib.co.ke/live-markets/')get to understand the current  market") 
+        st.markdown("Get to see [live stocks](https://fib.co.ke/live-markets/) get to understand the current  market") 
 
 
     # Add an Acknowledgment button to navigate back to the Blogging social app
